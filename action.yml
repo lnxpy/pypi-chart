@@ -1,0 +1,22 @@
+name: PyPI Chart
+description: Show your Python package download rate chart/badge in the README
+author: Sadra Yahyapour
+
+branding:
+  icon: bar-chart-2
+  color: yellow
+
+runs:
+  using: docker
+  image: Dockerfile
+
+inputs:
+  github_token:
+    description: The GitHub auth token
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: The repository name in the form of "<owner>/<repo>"
+    default: ${{ github.repository }}
+    required: true
